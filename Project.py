@@ -1,1 +1,10 @@
-
+Vehicle_Number=[]
+Vehicle_Type=[]
+Vehicle_Name=[]
+Owner_Name=[]
+Hours=[]
+Date=[]
+Minutes=[]
+Parked_time=[]
+bikes=50
+cars=50
