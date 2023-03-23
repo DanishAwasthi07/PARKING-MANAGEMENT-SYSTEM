@@ -80,3 +80,25 @@ while True:
             g=False
         print("\n============== Record detail saved ==============\n")
         next_main=input("Press enter to got to the main menu")
+    elif opt==2:
+        h=True
+        while h==True:
+            Vh=input("\tEnter vehicle number to remove (XXXX-XX-XXXX) - ").upper()
+            if Vh[4]!="-" or Vh[7]!="-":
+                print("########Please Enter as given Format ########")
+            elif len(Vh)==12:
+                if Vh in Vehicle_Number:
+                    i=Vehicle_Number.index(Vh)
+                    Vehicle_Number.pop(i)
+                    Vehicle_Type.pop(i)
+                    Vehicle_Name.pop(i)
+                    Owner_Name.pop(i)
+                    Date.pop(i)
+                    Hours.pop(i)
+                    Minutes.pop(i)
+                    h=False
+                    print("\n============== Removed successfully ==============n")
+                elif Vh not in Vehicle_Number:
+                    print("###### No Such Entry ######")
+            else:
+                print("###### Please enter valid number ######")
