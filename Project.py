@@ -129,3 +129,46 @@ while True:
         print("-Bike         Rs20/ Hour")
         print("-Car          Rs40/ Hour")
         print("﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌")
+    elif opt==6:
+        i=True
+        while i==True:
+            Vi=(input("\tEnter vehicle number to remove(XXXX-XX-XXXX) - ")).upper()
+            if Vi=="":
+                print("###### Please enter vehicle number ######")
+            elif Vi[4]!="-" or Vi[7]!="-":
+                print("########Please Enter as given Format ########")
+            elif len(Vi)==12:
+                    if Vi in Vehicle_Number:
+                        i=Vehicle_Number.index(Vi)
+                        i=False
+                    elif Vi not in Vehicle_Number:
+                        print("###### No Such Entry ######")
+            elif len(Vi)!=12:
+                print("###### Please enter valid vehicle number ######")
+            else:
+                print("###### Enter Valid Vehicle Number ######")
+        print("\tVehicle Check in time - ",Hours[i]+":"+Minutes[i])
+        print("\tVehicle Check in Date - ",Date[i])
+        print("\tVehicle Type - ",Vehicle_Type[i])
+        
+        Vgg=datetime.datetime.now()
+        hours1 = Vgg.strftime("%H")
+        minutes1 = Vgg.strftime("%M")
+        date = Vgg.strftime("%D")
+        new_time=int(hours1)-int(Hours[i])
+        new_time_1=(int(minutes1)-int(Minutes[i]))
+        if new_time_1<0:
+            new_time=new_time-1
+            new_time_1=(new_time_1+60)
+        
+        print("       ",new_time,"Hours",":",new_time_1,"Minutes")
+        if new_time==0 and Vehicle_Type[i]=="Bike":
+            amt=20
+        if new_time==0 and Vehicle_Type[i]=="Car":
+            amt=40
+        if new_time>=1:
+            if Vehicle_Type[i]=="Bike":
+                amt=new_time*int(20)
+            if Vehicle_Type[i]=="Car":
+                amt=new_time*int(40)
+        print("\tParking Charge - ",amt)
