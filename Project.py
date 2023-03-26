@@ -172,3 +172,7 @@ while True:
             if Vehicle_Type[i]=="Car":
                 amt=new_time*int(40)
         print("\tParking Charge - ",amt)
+        elif opt==7:
+                print("................................Thank you for using our service................................")
+                print("                               ********* (: Goodbye :) *********")
+                break
