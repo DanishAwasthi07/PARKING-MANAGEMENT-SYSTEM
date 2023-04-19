@@ -1,3 +1,6 @@
-# scm-project-1
-Chitkara university SCM(source code management)project 
-Parking management system
+PARKING MANAGEMENT SYSTEM
+features:-
+1.automatic time recording
+2.empty spaces
+3.automatic billing
+
